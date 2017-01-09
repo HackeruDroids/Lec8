@@ -21,7 +21,7 @@
                 <td>{{email}}</td>
                 <td>
                     <a href="/updateStudent?id={{id}}">Update</a> | 
-                    <a href="/deleteStudent?id={{id}}">Delete</a>
+                    <a onclick="if(!confirm('Are you sure?')) return false;" href="/deleteStudent?id={{id}}">Delete</a>
                 </td>
             </tr>
             {{/each}}
