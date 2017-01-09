@@ -36,11 +36,36 @@ router.get('/addstudent', function (req, res) {
 });
 
 router.get('/updateStudent', function (req, res) {
-    var id = req.query.id;
-    var sql = "SELECT * FROM Students WHERE id = $1;"
-    query(sql, [id], res, function(json){
-      res.render('updateStudent', { title: "Update Student", student: json.rows[0]});
-    })
+  var id = req.query.id;
+  var sql = "SELECT * FROM Students WHERE id = $1;"
+  query(sql, [id], res, function (json) {
+    res.render('updateStudent', {
+      title: "Update Student",
+      student: json.rows[0]
+    });
+  });
+});
+
+
+router.post('/updateStudent', function (req, res) {
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+  var id = req.body.id;
+
+  var student = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    id: id
+  }
+  var SQL = 'UPDATE Students SET firstName = $1, lastName = $2, email = $3 WHERE id = $4';
+  query(SQL, [firstName, lastName, email, id], res, function (json) {
+    res.render('updateStudent', {
+      title: 'Added succeesfully',
+      student: student
+    });
+  });
 });
 
 
