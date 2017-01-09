@@ -54,8 +54,8 @@ router.post('/updateStudent', function (req, res) {
   var id = req.body.id;
 
   var student = {
-    firstName: firstName,
-    lastName: lastName,
+    firstname: firstName,
+    lastname: lastName,
     email: email,
     id: id
   }
