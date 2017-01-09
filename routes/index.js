@@ -35,6 +35,15 @@ router.get('/addstudent', function (req, res) {
   });
 });
 
+router.get('/updateStudent', function (req, res) {
+    var id = req.query.id;
+    var sql = "SELECT * FROM Students WHERE id = $1;"
+    query(sql, [id], res, function(json){
+      res.render('updateStudent', { title: "Update Student", student: json.rows[0]});
+    })
+});
+
+
 router.post('/addstudent', function (req, res) {
   var firstName = req.body.firstName;
   var lastName = req.body.lastName;

@@ -10,6 +10,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,11 @@
                 <td>{{firstname}}</td>
                 <td>{{lastname}}</td>
                 <td>{{email}}</td>
+                <td>
+                    <a href="/updateStudent?id={{id}}">Update</a> | 
+                    <a href="/deleteStudent?id={{id}}">Delete</a>
+
+                </td>
             </tr>
             {{/each}}
         </tbody>
