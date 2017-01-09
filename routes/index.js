@@ -18,6 +18,17 @@ router.get('/', function (req, res, next) {
 // });
 
 
+router.get('/students', function (req, res) {
+  var sql = "SELECT * FROM Students";
+  query(sql, [], res, function (json) {
+    res.render('students', {
+      title: "Students Page",
+      students: json.rows
+    });
+  });
+});
+
+
 router.get('/addstudent', function (req, res) {
   res.render('addstudent', {
     title: 'Add Student'
@@ -35,7 +46,6 @@ router.post('/addstudent', function (req, res) {
       title: 'Added succeesfully'
     });
   });
-
 });
 
 
