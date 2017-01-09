@@ -1,23 +1,26 @@
-<h1>{{title}} Page</h1>
+<div class="container">
+
+    <h1>{{title}} Page</h1>
 
 
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each students}}
-        <tr>
-            <td>{{id}}</td>
-            <td>{{firstname}}</td>
-            <td>{{lastname}}</td>
-            <td>{{email}}</td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each students}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{email}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
